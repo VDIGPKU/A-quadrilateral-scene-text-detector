@@ -1,34 +1,8 @@
-# A *Faster* Pytorch Implementation of Faster R-CNN
-
+# A quadrilateral scene text detector with two-stage network architecture
 ## Introduction
 
-This project is a *faster* pytorch implementation of faster R-CNN, aimed to accelerating the training of faster R-CNN object detection models. Recently, there are a number of good implementations:
+This project is a pytorch implementation of our paper "A quadrilateral scene text detector with two-stage network architecture"(https://www.sciencedirect.com/science/article/abs/pii/S0031320320300364)
 
-* [rbgirshick/py-faster-rcnn](https://github.com/rbgirshick/py-faster-rcnn), developed based on Pycaffe + Numpy
-
-* [longcw/faster_rcnn_pytorch](https://github.com/longcw/faster_rcnn_pytorch), developed based on Pytorch + Numpy
-
-* [endernewton/tf-faster-rcnn](https://github.com/endernewton/tf-faster-rcnn), developed based on TensorFlow + Numpy
-
-* [ruotianluo/pytorch-faster-rcnn](https://github.com/ruotianluo/pytorch-faster-rcnn), developed based on Pytorch + TensorFlow + Numpy
-
-During our implementing, we referred the above implementations, especailly [longcw/faster_rcnn_pytorch](https://github.com/longcw/faster_rcnn_pytorch). However, our implementation has several unique and new features compared with the above implementations:
-
-* **It is pure Pytorch code**. We convert all the numpy implementations to pytorch!
-
-* **It supports multi-image batch training**. We revise all the layers, including dataloader, rpn, roi-pooling, etc., to support multiple images in each minibatch.
-
-* **It supports multiple GPUs training**. We use a multiple GPU wrapper (nn.DataParallel here) to make it flexible to use one or more GPUs, as a merit of the above two features.
-
-* **It supports three pooling methods**. We integrate three pooling methods: roi pooing, roi align and roi crop. More importantly, we modify all of them to support multi-image batch training.
-
-* **It is memory efficient**. We limit the image aspect ratio, and group images with similar aspect ratios into a minibatch. As such, we can train resnet101 and VGG16 with batchsize = 4 (4 images) on a sigle Titan X (12 GB). When training with 8 GPU, the maximum batchsize for each GPU is 3 (Res101), totally 24.
-
-* **It is faster**. Based on the above modifications, the training is much faster. We report the training speed on NVIDIA TITAN Xp in the tables below.
-
-## Other Resources
-
-* [Feature Pyramid Network (FPN)](https://github.com/jwyang/fpn.pytorch)
 
 ## Benchmarking
 
@@ -76,24 +50,6 @@ Thanks to [Remi](https://github.com/Cadene) for providing the pretrained detecti
 * Click the links in the above tables to download our pre-trained faster r-cnn models.
 * If not mentioned, the GPU we used is NVIDIA Titan X Pascal (12GB).
 
-### What we are going to do
-
-- [x] Support both python2 and python3 (great thanks to [cclauss](https://github.com/cclauss)).
-- [ ] Run systematical experiments on PASCAL VOC 07/12, COCO, ImageNet, Visual Genome (VG) with different settings.
-- [ ] Write a detailed report about the new stuffs in our implementations, and the quantitative results in our experiments.
-
-## Preparation 
-
-
-First of all, clone the code
-```
-git clone https://github.com/jwyang/faster-rcnn.pytorch.git
-```
-
-Then, create a folder:
-```
-mkdir data
-```
 
 ### prerequisites
 
@@ -207,31 +163,15 @@ python demo.py --net vgg16 \
 
 Then you will find the detection results in folder $ROOT/images. 
 
-**Note the default demo.py merely support pascal_voc categories. You need to change the [line](https://github.com/jwyang/faster-rcnn.pytorch/blob/530f3fdccaa60d05fa068bc2148695211586bd88/demo.py#L156) to adapt your own model.**
-
-Below are some detection results:
-
-<div style="color:#0000FF" align="center">
-<img src="images/img3_det_res101.jpg" width="430"/> <img src="images/img4_det_res101.jpg" width="430"/>
-</div>
-
-## Authorship
-
-This project is equally contributed by [Jianwei Yang](https://github.com/jwyang) and [Jiasen Lu](https://github.com/jiasenlu).
 
 ## Citation
 
-    @article{jjfaster2rcnn,
-        Author = {Jianwei Yang and Jiasen Lu, Dhruv Batra, Devi Parikh},
-        Title = {A Faster Pytorch Implementation of Faster R-CNN},
-        Journal = {https://github.com/jwyang/faster-rcnn.pytorch},
-        Year = {2017}
-    } 
-    
-    @inproceedings{renNIPS15fasterrcnn,
-        Author = {Shaoqing Ren and Kaiming He and Ross Girshick and Jian Sun},
-        Title = {Faster {R-CNN}: Towards Real-Time Object Detection
-                 with Region Proposal Networks},
-        Booktitle = {Advances in Neural Information Processing Systems ({NIPS})},
-        Year = {2015}
-    }
+  @article{wang2020quadrilateral,
+  title={A quadrilateral scene text detector with two-stage network architecture},
+  author={Wang, Siwei and Liu, Yudong and He, Zheqi and Wang, Yongtao and Tang, Zhi},
+  journal={Pattern Recognition},
+  volume={102},
+  pages={107230},
+  year={2020},
+  publisher={Elsevier}
+}
