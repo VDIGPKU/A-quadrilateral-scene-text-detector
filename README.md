@@ -96,8 +96,6 @@ python trainval_net.py --dataset icdar --net res101 \
 
 ```
 
-Change dataset to "coco" or 'vg' if you want to train on COCO or Visual Genome.
-
 ## Test
 
 If you want to evlauate the detection performance of a pre-trained vgg16 model on pascal_voc test set, simply run
