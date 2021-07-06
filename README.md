@@ -3,7 +3,7 @@
 
 This project is a pytorch implementation of our paper **"A quadrilateral scene text detector with two-stage network architecture"**(https://www.sciencedirect.com/science/article/abs/pii/S0031320320300364). 
 
-Contact us(bahuangliuhe@pku.edu.cn,wyt@pku.edu.cn) if you have any questions.
+Contact us (bahuangliuhe@pku.edu.cn,wyt@pku.edu.cn) if you have any questions.
 
 
 
