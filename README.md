@@ -15,11 +15,9 @@ This project is a pytorch implementation of our paper "A quadrilateral scene tex
 
 ### Data Preparation
 
-* **PASCAL_VOC 07+12**: Please follow the instructions in [py-faster-rcnn](https://github.com/rbgirshick/py-faster-rcnn#beyond-the-demo-installation-for-training-and-testing-models) to prepare VOC datasets. Actually, you can refer to any others. After downloading the data, creat softlinks in the folder data/.
+* **ICDAR2015(or other dataset)**: Please downloading the data and creat softlinks in the folder data/.
 
-* **COCO**: Please also follow the instructions in [py-faster-rcnn](https://github.com/rbgirshick/py-faster-rcnn#beyond-the-demo-installation-for-training-and-testing-models) to prepare the data.
 
-* **Visual Genome**: Please follow the instructions in [bottom-up-attention](https://github.com/peteanderson80/bottom-up-attention) to prepare Visual Genome dataset. You need to download the images and object annotation files first, and then perform proprecessing to obtain the vocabulary and cleansed annotations based on the scripts provided in this repository.
 
 ### Pretrained Model
 
@@ -112,12 +110,14 @@ Specify the specific model session, chechepoch and checkpoint, e.g., SESSION=1, 
 
 ## Citation
 
-  @article{wang2020quadrilateral,
-  title={A quadrilateral scene text detector with two-stage network architecture},
-  author={Wang, Siwei and Liu, Yudong and He, Zheqi and Wang, Yongtao and Tang, Zhi},
-  journal={Pattern Recognition},
-  volume={102},
-  pages={107230},
-  year={2020},
-  publisher={Elsevier}
-}
+## Citation
+
+    @article{wang2020quadrilateral,
+    title={A quadrilateral scene text detector with two-stage network architecture},
+    author={Wang, Siwei and Liu, Yudong and He, Zheqi and Wang, Yongtao and Tang, Zhi},
+    journal={Pattern Recognition},
+    volume={102},
+    pages={107230},
+    year={2020},
+    publisher={Elsevier}
+    }
