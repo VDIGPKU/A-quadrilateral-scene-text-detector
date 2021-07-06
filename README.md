@@ -12,7 +12,7 @@ Contact us (bahuangliuhe@pku.edu.cn,wyt@pku.edu.cn) if you have any questions.
 ### prerequisites
 
 * Python 3.7
-* Pytorch 0.2.0
+* Pytorch 0.3.0
 * CUDA 8.0 or higher
 
 ### Data Preparation
